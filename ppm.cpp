@@ -116,13 +116,9 @@ void PPM::write(string filename) {
     if (filesystem::exists(filename)) {
       cout << "File `" << filename << "` already exists." << endl;
       cout << "enter a valid filename (or `o` to overwrite): ";
-      string input;
-      cin >> input;
-      if (input == "o") {
+      cin >> filename;
+      if (filename == "") {
         break;
-      } else {
-        filename = input;
-        continue;
       }
     } else {
       break;
